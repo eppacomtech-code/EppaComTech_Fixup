@@ -60,6 +60,77 @@ if (copyAddressButton && copyFeedback) {
   });
 }
 
+const mapPing = document.querySelector(".map-ping");
+const mapPingStatus = document.querySelector("#map-ping-status");
+
+if (mapPing instanceof HTMLButtonElement && mapPingStatus) {
+  let mapAudioContext;
+
+  mapPing.addEventListener("click", () => {
+    const statusMessages = [];
+    const announcement = "Phone and laptop repairs. Accessories for sale. Click on the ping. EppaComTech at NAF Villa, Asokoro, Abuja.";
+
+    if (typeof window.AudioContext === "function") {
+      try {
+        if (!mapAudioContext || mapAudioContext.state === "closed") {
+          mapAudioContext = new window.AudioContext();
+        }
+
+        const playBeep = () => {
+          const oscillator = mapAudioContext.createOscillator();
+          const volume = mapAudioContext.createGain();
+          const startTime = mapAudioContext.currentTime;
+
+          oscillator.type = "sine";
+          oscillator.frequency.setValueAtTime(880, startTime);
+          volume.gain.setValueAtTime(0.0001, startTime);
+          volume.gain.exponentialRampToValueAtTime(0.12, startTime + 0.02);
+          volume.gain.exponentialRampToValueAtTime(0.0001, startTime + 0.28);
+          oscillator.connect(volume);
+          volume.connect(mapAudioContext.destination);
+          oscillator.start(startTime);
+          oscillator.stop(startTime + 0.3);
+        };
+
+        if (mapAudioContext.state === "suspended") {
+          mapAudioContext.resume().then(playBeep).catch((error) => {
+            console.error("Could not play the map ping sound.", error);
+            mapPingStatus.textContent = "The beep could not play. Check your browser sound settings.";
+          });
+        } else {
+          playBeep();
+        }
+      } catch (error) {
+        console.error("Could not start the map ping sound.", error);
+        statusMessages.push("Beep unavailable.");
+      }
+    } else {
+      statusMessages.push("Beep is not supported in this browser.");
+    }
+
+    if ("speechSynthesis" in window && typeof window.SpeechSynthesisUtterance === "function") {
+      window.speechSynthesis.cancel();
+      const utterance = new window.SpeechSynthesisUtterance(announcement);
+      utterance.rate = 0.92;
+      utterance.onend = () => {
+        mapPingStatus.textContent = "Announcement finished. EppaComTech, NAF Villa, Asokoro, Abuja.";
+      };
+      utterance.onerror = (event) => {
+        console.error("Could not speak the map announcement.", event.error);
+        mapPingStatus.textContent = "The spoken announcement could not play. Please check your browser's speech settings.";
+      };
+      mapPingStatus.textContent = "Speaking: Phone and laptop repairs. Accessories for sale. Click on the ping.";
+      window.speechSynthesis.speak(utterance);
+    } else {
+      statusMessages.push("Spoken announcements are not supported in this browser.");
+    }
+
+    if (statusMessages.length > 0) {
+      mapPingStatus.textContent = statusMessages.join(" ");
+    }
+  });
+}
+
 const currentYear = document.querySelector("#current-year");
 if (currentYear) currentYear.textContent = String(new Date().getFullYear());
 
@@ -518,7 +589,7 @@ editablePhotos.forEach((photo, index) => {
   controls.className = "editable-photo-controls";
   const changeLabel = document.createElement("label");
   changeLabel.className = "photo-change-button";
-  changeLabel.textContent = "✎";
+  changeLabel.textContent = "Change photo";
   changeLabel.setAttribute("aria-label", `Change photo: ${photo.alt}`);
   changeLabel.title = "Change photo";
 

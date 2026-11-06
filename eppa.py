@@ -13,9 +13,9 @@ class ProfessionalProfile:
         
         # Operational Headquarters
         self.location = {
-            "shop_number": "Shop No 75",
-            "building": "Bannex Plaza",
-            "district": "Wuse 2",
+            "shop_number": "No. 7A",
+            "building": "Jekenu, NAF Villa",
+            "district": "Asokoro",
             "state_territory": "FCT, Abuja"
         }
         
@@ -39,7 +39,7 @@ class ProfessionalProfile:
             f"({', '.join(self.sales_inventory['mobile_ecosystems'])})\n"
             f"Supplies: {', '.join(self.sales_inventory['accessories'])}\n\n"
             f"=== SERVICE DELIVERY MODES ===\n"
-            f"• In-Shop Repairs & Diagnostics (Bannex Plaza)\n"
+            f"• In-Shop Repairs & Diagnostics ({self.location['building']}, {self.location['district']})\n"
             f"• On-Site/Home Service Deployments\n"
             f"• IT Consultation & Procurement Advice"
         )
