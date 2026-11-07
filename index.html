@@ -47,9 +47,9 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
-  <body>
+  <body id="top">
     <header class="site-header">
-      <a class="brand" href="#home" aria-label="EppaComTech home">
+      <a class="brand" href="index.html#home" aria-label="EppaComTech home">
         <img class="brand-logo" src="assets/eppacomtech-logo.jpg" alt="EppaComTech Computer Boot logo" />
       </a>
 
@@ -64,13 +64,13 @@
       </button>
 
       <nav class="site-nav" id="site-navigation" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#shop">Visit the shop</a>
-        <a class="nav-cta" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="shop.html">Visit the shop</a>
+        <a class="nav-cta" href="contact.html">Get in touch <span aria-hidden="true">↗</span></a>
       </nav>
     </header>
-
     <main>
       <section class="hero" id="home">
         <div class="hero-copy">
@@ -120,178 +120,15 @@
             <span class="portrait-title"><span class="status-dot"></span> SALES · SETUP · SUPPORT</span>
           </figcaption>
         </figure>
-        <a class="scroll-cue" href="#services"><span></span> EXPLORE SERVICES</a>
-      </section>
-
-      <section class="intro section-wrap" id="about">
-        <div class="section-kicker"><span>01</span> A LITTLE ABOUT ME</div>
-        <div class="intro-content">
-          <h2>Good tech advice.<br /><span>Real solutions.</span></h2>
-          <div class="intro-description">
-            <p>
-              I’m a Computer Technical Technician and technology consultant
-              based at NAF Villa, Asokoro. I help people find the right
-              computers and phones, get dependable technical support, and make
-              confident decisions about their technology.
-            </p>
-            <p>
-              Whether you’re shopping for a laptop, sorting out a device issue,
-              or looking for a convenient home service, I’m here to help.
-            </p>
-            <a class="inline-link" href="#contact">Let’s talk about what you need <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-      </section>
-
-      <section class="services section-wrap" id="services">
-        <div class="services-heading">
-          <div>
-            <div class="section-kicker"><span>02</span> WHAT I CAN HELP WITH</div>
-            <h2>One place for<br /><span>your tech needs.</span></h2>
-          </div>
-          <p>From finding the right device to getting the help you need—let’s make tech easier.</p>
-        </div>
-
-        <div class="service-filters" role="group" aria-label="Filter services">
-          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Everything</button>
-          <button class="filter-button" type="button" data-filter="support" aria-pressed="false">Technical support</button>
-          <button class="filter-button" type="button" data-filter="sales" aria-pressed="false">Sales &amp; accessories</button>
-          <button class="filter-button" type="button" data-filter="advice" aria-pressed="false">Consultancy</button>
-        </div>
-
-        <div class="service-grid">
-          <article class="service-card card-dark" data-category="support">
-            <div class="card-top"><span class="service-icon" aria-hidden="true">⌘</span><span class="card-number">01</span></div>
-            <img class="service-image" src="assets/service-motherboard.jpg" alt="Close-up photograph of a computer motherboard" loading="lazy" />
-            <h3>Computer<br />technical support</h3>
-            <p>Practical help with computer setup, troubleshooting, and technical issues.</p>
-            <span class="card-label">COMPUTERS &amp; LAPTOPS</span>
-          </article>
-          <article class="service-card service-card-laptops card-light" data-category="sales">
-            <div class="card-top"><span class="service-icon" aria-hidden="true">▱</span><span class="card-number">02</span></div>
-            <h3>Computers<br />&amp; laptops</h3>
-            <p>Shop for computers and laptops to suit your everyday needs.</p>
-            <button class="catalog-open-button" type="button" data-album="laptops" aria-haspopup="dialog" aria-controls="computer-catalog">
-              Browse computers <span aria-hidden="true">↗</span>
-            </button>
-            <img class="service-image laptop-card-photo" src="assets/laptops/laptop-stock-1.jpg" alt="Silver HP laptop stock at EppaComTech" loading="lazy" />
-            <span class="card-label">DEVICES FOR EVERYDAY</span>
-          </article>
-          <article class="service-card card-light" data-category="sales">
-            <div class="card-top"><span class="service-icon" aria-hidden="true">◉</span><span class="card-number">03</span></div>
-            <img class="service-image" data-photo-album="phones" src="assets/service-phones.jpg" alt="iPhone and Android phone selection" loading="lazy" />
-            <h3>iPhone &amp;<br />Android</h3>
-            <p>Explore smartphone options across iPhone and Android.</p>
-            <button class="catalog-open-button album-open-button" type="button" data-album="phones" aria-haspopup="dialog" aria-controls="computer-catalog">Browse photos <span aria-hidden="true">↗</span></button>
-            <span class="card-label">MOBILE PHONES</span>
-          </article>
-          <article class="service-card card-accent" data-category="sales">
-            <div class="card-top"><span class="service-icon" aria-hidden="true">⌁</span><span class="card-number">04</span></div>
-            <img class="service-image" data-photo-album="accessories" src="assets/service-accessories.jpg" alt="Headphones and personal technology accessories" loading="lazy" />
-            <h3>Accessories<br />&amp; essentials</h3>
-            <p>Find accessories for your laptop and phone in one convenient place.</p>
-            <button class="catalog-open-button album-open-button" type="button" data-album="accessories" aria-haspopup="dialog" aria-controls="computer-catalog">Browse photos <span aria-hidden="true">↗</span></button>
-            <span class="card-label">LAPTOP &amp; PHONE ACCESSORIES</span>
-          </article>
-          <article class="service-card card-light" data-category="advice">
-            <div class="card-top"><span class="service-icon" aria-hidden="true">✳</span><span class="card-number">05</span></div>
-            <img class="service-image service-image-motion" src="assets/service-consultancy.jpg" alt="Technology consultant working through a problem with clients around a laptop" loading="lazy" />
-            <h3>Technology<br />consultancy</h3>
-            <p>Get straightforward guidance to help you choose the right tech.</p>
-            <span class="card-label">PERSONAL, PRACTICAL ADVICE</span>
-          </article>
-          <article class="service-card card-dark" data-category="support">
-            <div class="card-top"><span class="service-icon" aria-hidden="true">⌂</span><span class="card-number">06</span></div>
-            <img class="service-image service-image-motion" src="assets/service-home-service.jpg" alt="Technician carefully repairing electronic hardware" loading="lazy" />
-            <h3>Home<br />service</h3>
-            <p>Ask about convenient technical assistance at your home.</p>
-            <span class="card-label">SERVICE WHERE YOU ARE</span>
-          </article>
-        </div>
-        <p class="filter-empty" hidden>No services in this category yet.</p>
-      </section>
-
-      <section class="visit section-wrap" id="shop">
-        <div class="visit-copy">
-          <div class="section-kicker"><span>03</span> COME SAY HELLO</div>
-          <h2>Find me at<br /><span>NAF Villa, Asokoro.</span></h2>
-          <p>Find EppaComTech in Asokoro for computer sales and repairs, phone sales, accessories, and practical technology advice.</p>
-          <div class="address-block">
-            <span class="address-pin" aria-hidden="true">⌖</span>
-            <div><strong>No. 7A, Jekenu, NAF Villa</strong><span>Asokoro, Abuja, FCT, Nigeria</span></div>
-          </div>
-          <div class="business-registration"><span>BUSINESS NAME</span><strong>EppaComTech</strong><span>REGISTRATION NUMBER</span><strong>3399301</strong></div>
-          <div class="phone-contacts" aria-label="Call or WhatsApp">
-            <a class="button button-whatsapp" href="https://wa.me/2349064178000?text=EppaComTech-whyto" target="_blank" rel="noopener noreferrer">
-              WhatsApp 09064178000 <span aria-hidden="true">↗</span>
-            </a>
-            <a class="phone-link" href="https://wa.me/2348050496588?text=EppaComTech-whyto" target="_blank" rel="noopener noreferrer">WhatsApp 08050496588</a>
-            <a class="phone-link" href="tel:+2349064178000">Call 09064178000</a>
-            <a class="phone-link" href="tel:+2348050496588">Call 08050496588</a>
-          </div>
-          <div class="visit-actions">
-            <a
-              class="button button-primary"
-              href="https://www.google.com/maps/search/?api=1&amp;query=EppaComTech%2C+No.+7A+Jekenu+NAF+Villa%2C+Asokoro%2C+Abuja%2C+FCT%2C+Nigeria"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Get directions <span aria-hidden="true">↗</span></a>
-            <button class="copy-address" type="button">Copy address</button>
-          </div>
-          <span class="copy-feedback" role="status" aria-live="polite"></span>
-        </div>
-        <div class="visit-card">
-          <div class="map-art">
-            <iframe
-              class="live-map"
-              title="Interactive Google Map centered on EppaComTech at NAF Villa, Asokoro, Abuja"
-              src="https://www.google.com/maps?q=9.038213%2C7.513779&z=17&output=embed"
-              loading="lazy"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-            <button
-              class="map-ping"
-              type="button"
-              aria-label="Play announcement: Phone and laptop repairs, accessories for sale. Click on the ping. EppaComTech at NAF Villa, Asokoro, Abuja."
-              aria-describedby="map-ping-status"
-            >
-              <span class="map-ping-indicator" aria-hidden="true"><span></span></span>
-              <span class="map-ping-copy">
-                <strong>REPAIRS &amp; ACCESSORIES FOR SALE</strong>
-                <span>CLICK THE PING · NAF VILLA, ASOKORO</span>
-              </span>
-            </button>
-            <span class="map-ping-status" id="map-ping-status" role="status" aria-live="polite"></span>
-          </div>
-          <div class="visit-card-footer"><span>EPPACOMTECH · ASOKORO, ABUJA</span><span>COMPUTER &amp; PHONE SERVICES</span></div>
-        </div>
-      </section>
-
-      <section class="contact section-wrap" id="contact">
-        <div class="contact-inner">
-          <div class="section-kicker"><span>04</span> LET’S GET YOU SORTED</div>
-          <h2>Have a tech question?<br /><span>Let’s talk.</span></h2>
-          <p>Visit me at No. 7A, Jekenu, NAF Villa, Asokoro, or ask about home service. I’d be glad to help you figure out your next step.</p>
-          <div class="contact-actions">
-            <a class="button button-dark" href="https://wa.me/2349064178000?text=EppaComTech-whyto" target="_blank" rel="noopener noreferrer">EppaComTech-whyto · WhatsApp <span aria-hidden="true">↗</span></a>
-            <a class="contact-phone" href="tel:+2349064178000">Call 09064178000</a>
-            <a class="contact-phone" href="tel:+2348050496588">Call 08050496588</a>
-          </div>
-          <span class="contact-address">NO. 7A, JEKENU, NAF VILLA · ASOKORO, ABUJA, FCT</span>
-          <span class="contact-business">EPPACOMTECH · RC 3399301</span>
-          <span class="contact-decoration" aria-hidden="true">E<span>.</span></span>
-        </div>
+        <a class="scroll-cue" href="services.html"><span></span> EXPLORE SERVICES</a>
       </section>
     </main>
-
     <footer class="site-footer">
-      <a class="footer-brand" href="#home">EPPACOMTECH<span>.</span></a>
+      <a class="footer-brand" href="index.html#home">EPPACOMTECH<span>.</span></a>
       <p>Unoko Lewis, CEO · Computer technical technician · RC 3399301</p>
-      <a href="#home" class="back-to-top">BACK TO TOP ↑</a>
+      <a href="#top" class="back-to-top">BACK TO TOP ↑</a>
       <span class="copyright">© <span id="current-year"></span> EPPACOMTECH · ALL RIGHTS RESERVED</span>
     </footer>
-
     <dialog class="computer-catalog" id="computer-catalog" aria-labelledby="computer-catalog-title">
       <div class="computer-catalog-header">
         <div>
